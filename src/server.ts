@@ -41,7 +41,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       res.sendFile(result_path);
       res.once("finish", () => deleteLocalFiles([result_path]));
     }catch (err) {
-      res.status(400).send("Unable to process the image. Make sure the image is available at the provided URL");
+      res.status(422).send("Unable to process the image. Make sure the image is available at the provided URL");
     }
   } );
 
